@@ -1,4 +1,4 @@
-<# Returns the current Star Citizen backend hostname like:
+<# This returns the current Star Citizen backend hostname like:
    pub-sc-alpha-431-10275505.test1.cloudimperiumgames.com
 #>
 [CmdletBinding()]

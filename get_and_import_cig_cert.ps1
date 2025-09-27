@@ -3,7 +3,7 @@
   [int]$Port = 443
 )
 
-# Resolve script folder
+# Resolves the script folder
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 # If no host passed, discover it dynamically

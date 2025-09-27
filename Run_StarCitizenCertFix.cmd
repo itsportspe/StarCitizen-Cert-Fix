@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-REM -- Ensure admin (UAC) --
+REM -- Ensure requesting admin (UAC) --
 NET SESSION >nul 2>&1
 if %ERRORLEVEL% NEQ 0 (
   echo Requesting administrative privileges...
