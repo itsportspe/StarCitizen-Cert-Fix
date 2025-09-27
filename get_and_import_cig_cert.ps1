@@ -1,7 +1,15 @@
 ﻿Param(
-  [string]$HostName = "pub-sc-alpha-431-10275505.test1.cloudimperiumgames.com",
+  [string]$HostName,
   [int]$Port = 443
 )
+
+# Resolve script folder
+$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+
+# If no host passed, discover it dynamically
+if (-not $HostName) {
+  $HostName = & (Join-Path $ScriptDir 'Get-ScPatchHost.ps1') -MinBuild 420 -MaxBuild 500
+}
 
 $ErrorActionPreference = 'Stop'
 
